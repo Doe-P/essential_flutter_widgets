@@ -1,9 +1,21 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
-  Home({super.key});
+import 'home.dart';
 
-  int? number = 10;
+class HomeSecond extends StatefulWidget {
+  const HomeSecond({super.key});
+
+  @override
+  State<HomeSecond> createState() => _HomeSecondState();
+}
+
+class _HomeSecondState extends State<HomeSecond> {
+  int? number = null;
+  @override
+  void initState() {
+    super.initState();
+    number = 1;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +40,29 @@ class Home extends StatelessWidget {
                     backgroundColor: MaterialStateProperty.all(Colors.blue),
                   ),
                   onPressed: () {
-                    number = number! + 1;
+                    setState(() {
+                      number = number! + 1;
+                    });
                   },
                   child: Text(
                     'Increment',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                    ),
+                  )),
+            ),
+            Center(
+              child: ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.blue),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) => Home()));
+                  },
+                  child: const Text(
+                    'Back to Home',
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.white,

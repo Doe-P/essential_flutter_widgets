@@ -1,4 +1,5 @@
 import 'package:essential_flutter_widgets/structure_widgets/home.dart';
+import 'package:essential_flutter_widgets/structure_widgets/home_second.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Home(),
+      home: const HomeSecond(),
     );
   }
 }
